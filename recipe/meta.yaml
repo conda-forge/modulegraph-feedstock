@@ -11,16 +11,15 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - modulegraph = modulegraph.__main__:main
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
     - python
-    - setuptools
   run:
     - altgraph >=0.15
     - python
@@ -30,10 +29,13 @@ test:
   imports:
     - modulegraph
   commands:
+    - pip check
     - modulegraph --help
+  requires:
+    - pip
 
 about:
-  home: http://bitbucket.org/ronaldoussoren/modulegraph
+  home: https://pypi.org/project/modulegraph
   license: MIT
   license_family: MIT
   license_file: LICENSE
@@ -42,8 +44,8 @@ about:
     by bytecode analysis for import statements. modulegraph uses similar methods
     to modulefinder from the standard library, but uses a more flexible internal
     representation, has more extensive knowledge of special cases, and is extensible.
+  dev_url: https://github.com/ronaldoussoren/modulegraph
   doc_url: https://modulegraph.readthedocs.io/en/latest/
-  dev_url: https://bitbucket.org/ronaldoussoren/modulegraph
 
 extra:
   recipe-maintainers:

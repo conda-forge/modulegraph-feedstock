@@ -1,11 +1,11 @@
 About modulegraph
 =================
 
-Home: http://bitbucket.org/ronaldoussoren/modulegraph
+Home: https://pypi.org/project/modulegraph
 
 Package license: MIT
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/modulegraph-feedstock/blob/master/LICENSE.txt)
 
 Summary: modulegraph determines a dependency graph between Python modules primarily
 by bytecode analysis for import statements. modulegraph uses similar methods
@@ -13,7 +13,9 @@ to modulefinder from the standard library, but uses a more flexible internal
 representation, has more extensive knowledge of special cases, and is extensible.
 
 
+Development: https://github.com/ronaldoussoren/modulegraph
 
+Documentation: https://modulegraph.readthedocs.io/en/latest/
 
 Current build status
 ====================
