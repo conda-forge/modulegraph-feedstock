@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: c914c8c95a0e10fe88505d4e9c2284b4e3dbc70943e306cc6567e36cc541bf4b
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - modulegraph = modulegraph.__main__:main
   script: {{ PYTHON }} -m pip install . -vv
@@ -19,10 +19,11 @@ build:
 requirements:
   host:
     - pip
-    - python >=2.7
+    - python {{ python_min }}
+    - setuptools
   run:
     - altgraph >=0.15
-    - python >=2.7
+    - python >={{ python_min }}
     - setuptools
 
 test:
@@ -33,6 +34,7 @@ test:
     - modulegraph --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://pypi.org/project/modulegraph
