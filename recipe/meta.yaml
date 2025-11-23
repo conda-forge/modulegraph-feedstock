@@ -1,5 +1,5 @@
 {% set name = "modulegraph" %}
-{% set version = "0.19.6" %}
+{% set version = "0.19.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c914c8c95a0e10fe88505d4e9c2284b4e3dbc70943e306cc6567e36cc541bf4b
+  sha256: 9ad8a81148ba1d90ade66617a153786f7d7cf6a88de83ee28e251183122c2a57
 
 build:
   noarch: python
-  number: 1
+  number: 0
   entry_points:
     - modulegraph = modulegraph.__main__:main
   script: {{ PYTHON }} -m pip install . -vv
